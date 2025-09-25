@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" href="abot.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    
+  <div id="navbar">
+        <nav>
+            <div class="logo">Wahaj Web</div>
+            <div class="nav-links">
+                <a href="home.html" style="   color: gold;">Home</a>
+                <a href="abotos.html" style="   color: gold;">About Us</a>
+                <a href="service.html" style="   color: gold;">Services</a>
+                <a href="portfolio.html" style="   color: gold;">Portfolio</a>
+                <a href="contect.html" style="   color: gold;">Contact Us</a>
+            </div>
+            <div class="search-container">
+                <input type="text" placeholder="Search here..." style="color: gold;" >
+                <button><i class="fas fa-search"></i></button>
+            </div>
+        </nav>
+    </div>
+
+    <main>
+        <section id="about">
+            <h2>About Wahaj Web</h2>
+            <p>We are a team of passionate developers and designers dedicated to creating exceptional digital experiences that drive business growth and success.</p>
+
+            <div class="about-wrapper">
+                <div class="about-image">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1000&q=80" alt="Our Team">
+                </div>
+                <div class="about-content">
+                    <h3>Innovation Meets Excellence</h3>
+                    <p>With over 5 years of experience in web development, we specialize in creating cutting-edge solutions that combine innovative technology with user-centered design. Our mission is to help businesses establish a strong online presence and achieve their digital goals.</p>
+
+                    <div class="stats-container">
+                        <div class="stat-item">
+                            <span class="stat-number">150+</span>
+                            <span class="stat-label">Projects Completed</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">50+</span>
+                            <span class="stat-label">Happy Clients</span>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-number">5+</span>
+                            <span class="stat-label">Years Experience</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-container">
+            <div class="footer">
+                <h3>Newsletter</h3>
+                <p>Subscribe to get updates on our latest projects and offers.</p>
+                <input type="email" placeholder="Enter your email">
+                <button>Subscribe</button>
+            </div>
+            <div class="footer footer-links">
+                <h3>Quick Links</h3>
+                <a href="home.html">Home</a>
+                <a href="abotos.html">About</a>
+                <a href="service.html">Services</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="contect.html">Contact</a>
+            </div>
+            <div class="footer">
+                <h3>Follow Us</h3>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+            </div>
+            <div class="footer">
+                <h3>Contact Info</h3>
+                <p><i class="fas fa-map-marker-alt"></i> 123 Web Street, Digital City</p>
+                <p><i class="fas fa-phone"></i> +1 (555) 123-4567</p>
+                <p><i class="fas fa-envelope"></i> info@wahajweb.com</p>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Wahaj Web. All Rights Reserved. | Designed with <i class="fas fa-heart" style="color: #ff4757;"></i> by Wahaj Web Team
+        </div>
+    </footer>
+
+    <script>
+        // Navbar scroll effect
+        window.addEventListener('scroll', function() {
+            const navbar = document.getElementById('navbar');
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.stat-item, .about-image, .about-content').forEach((el) => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
+</body>
+</html>
